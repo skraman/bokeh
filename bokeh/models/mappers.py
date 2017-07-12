@@ -49,7 +49,7 @@ class CategoricalColorMapper(ColorMapper):
         super(ColorMapper, self).__init__(**kwargs)
         palette = self.palette
         factors = self.factors
-        if palette and factors:
+        if palette and factors.all():
             if len(palette) < len(factors):
                 extra_factors = factors[len(palette):]
                 warnings.warn("""Palette length does not match number of
